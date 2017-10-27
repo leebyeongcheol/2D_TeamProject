@@ -99,16 +99,9 @@ class Object:
         self.Lpipe.draw(object_X,114)
         self.cloud.draw(700,400)
         self.cloud.draw(400,550)
+        self.cloud.draw(200,350)
 
-#class Trap:
-#    global trap_X
-#    def __init__(self):
-#        self.cloud_trap = load_image("cloud.png")
-#        self.trap_X = 200
-#    def draw(self):
-#        self.cloud.draw(trap_X,350)
-#    def update(self):
-#        if()
+
 
 def enter():
     global mario, grass, object,background
