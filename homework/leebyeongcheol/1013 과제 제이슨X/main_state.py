@@ -102,15 +102,16 @@ global boyindex
 
 
 boyindex = 0
+global mousex, mousey
 
 def handle_events():
+
     global mousex, mousey
 
     events = get_events()
 
     global boyindex
     global people
-
 
     for event in events:
         if event.type == SDL_QUIT:
@@ -125,7 +126,6 @@ def handle_events():
                 boyindex = people - 1
             boy[boyindex].x = mousex
             boy[boyindex].y = mousey
-
         elif event.type == SDL_KEYDOWN and event.key == SDLK_DOWN and boyindex > -1 :
             boyindex -= 1
             boy[boyindex].x = mousex
