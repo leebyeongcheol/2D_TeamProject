@@ -4,14 +4,14 @@ import title_state
 import random
 
 
-
 class Mario:
     image = None
+    Jump_size = 150
 
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND, UP_JUMP, DOWN, RIGHT_JUMP, LEFT_JUMP = 0, 1, 2, 3, 5, 4, 7, 6
 
     def __init__(self):
-        self.x, self.y = 100, 84
+        self.x, self.y = 100, 82
         self.frame = random.randint(0, 7)
         self.dir = 1
         self.state = self.RIGHT_STAND
@@ -23,27 +23,29 @@ class Mario:
     def update(self):
         self.frame = (self.frame + 1) % 8
 
-        if self.state == self.RIGHT_RUN:
-            self.x = min(800, self.x + 5)
-            if (self.x >= 600 - 50 and self.x <= 600 + 50) and (self.y >= 0 and self.y <= 200):
-                self.x -= 5
-            else:
-                self.x += 5
-        elif self.state == self.LEFT_RUN:
-            self.x = max(0, self.x - 5)
-            if (self.x >= 600 - 50 and self.x <= 600 + 50) and (self.y >= 0 and self.y <= 200):
-                self.x += 5
-            else:
-                self.x -= 5
+        if(self.state != self.UP_JUMP):
+            if self.state == self.RIGHT_RUN:
+                self.x = min(800, self.x + 5)
+                if (self.x >= 600 - 50 and self.x <= 600 + 50) and (self.y >= 0 and self.y <= 200):
+                    self.x -= 5
+                else:
+                    self.x += 5
+            elif self.state == self.LEFT_RUN:
+                self.x = max(0, self.x - 5)
+                if (self.x >= 600 - 50 and self.x <= 600 + 50) and (self.y >= 0 and self.y <= 200):
+                    self.x += 5
+                else:
+                    self.x -= 5
         elif self.state == self.UP_JUMP:
-            self.y = min(600, self.y + 2)
-            self.y += 2
-        elif self.state == self.DOWN:
-            self.y = max(70, self.y - 2)
-            self.y -= 2
-      # elif self.state == self.RIGHT_JUMP:
-      #     self.x += 2#
-      #     self.y += 2
+            if self.y < 82 + self.Jump_size:
+                    self.y += 150
+            elif self.y >= 82 +self.Jump_size:
+                 for i in range(self.Jump_size):
+                    self.y -= 1
+                 if self.y == 82:
+                     self.y = 82
+                     self.state = self.RIGHT_STAND
+
         delay(0.03)
 
    #def handle_left_run(self):
