@@ -72,7 +72,8 @@ class FreeBoy:
            self.state = RIGHT_RUN
            self.xdir += 0.5
          elif event.key == SDLK_UP: self.ydir += 1
-         #elif event.key == SDLK_DOWN: self.ydir -= 1
+         elif event.key == SDLK_DOWN:
+           self.ydir -= 1
         elif event.type == SDL_KEYUP:
          if event.key == SDLK_LEFT:
              self.state = LEFT_STAND
@@ -81,4 +82,5 @@ class FreeBoy:
              self.state = RIGHT_STAND
              self.xdir += -0.5
          elif event.key == SDLK_UP: self.ydir -= 1
-         #elif event.key == SDLK_DOWN: self.ydir += 1
+         elif event.key == SDLK_DOWN:
+           self.ydir -= 1
