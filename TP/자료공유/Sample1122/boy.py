@@ -20,7 +20,7 @@ class FreeBoy:
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND = 0, 1, 2, 3
 
     def __init__(self):
-        self.x, self.y = 1700, 300
+        self.x, self.y = 30, 90
         self.canvas_width = get_canvas_width()
         self.canvas_height = get_canvas_height()
         self.frame = random.randint(0, 7)
@@ -72,7 +72,7 @@ class FreeBoy:
            self.state = RIGHT_RUN
            self.xdir += 0.5
          elif event.key == SDLK_UP: self.ydir += 1
-         elif event.key == SDLK_DOWN: self.ydir -= 1
+         #elif event.key == SDLK_DOWN: self.ydir -= 1
         elif event.type == SDL_KEYUP:
          if event.key == SDLK_LEFT:
              self.state = LEFT_STAND
@@ -81,4 +81,4 @@ class FreeBoy:
              self.state = RIGHT_STAND
              self.xdir += -0.5
          elif event.key == SDLK_UP: self.ydir -= 1
-         elif event.key == SDLK_DOWN: self.ydir += 1
+         #elif event.key == SDLK_DOWN: self.ydir += 1
