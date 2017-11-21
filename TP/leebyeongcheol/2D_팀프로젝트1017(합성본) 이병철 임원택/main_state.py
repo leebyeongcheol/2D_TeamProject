@@ -8,7 +8,7 @@ class Mario:
     image = None
     Jump_size = 150
 
-    LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND, UP_JUMP, DOWN, RIGHT_JUMP, LEFT_JUMP = 0, 1, 2, 3, 5, 4, 7, 6
+    LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND, UP_JUMP, DOWN = 0, 1, 2, 3, 5, 4,
 
     def __init__(self):
         self.x, self.y = 100, 82
@@ -42,50 +42,12 @@ class Mario:
             elif self.y >= 82 +self.Jump_size:
                  for i in range(self.Jump_size):
                     self.y -= 1
+                    #self.x += 10/self.Jump_size
                  if self.y == 82:
                      self.y = 82
                      self.state = self.RIGHT_STAND
 
         delay(0.03)
-
-   #def handle_left_run(self):
-   #    self.x -= 5
-   #    self.run_frames += 1
-   #    if self.x < 0:
-   #        self.state = self.RIGHT_RUN
-   #        self.x = 0
-   #    if self.run_frames == 100:
-   #        self.state = self.LEFT_STAND
-   #        self.stand_frames = 0
-
-   #def handle_left_stand(self):
-   #    self.stand_frames += 1
-   #    if self.stand_frames == 50:
-   #        self.state = self.LEFT_RUN
-   #        self.run_frames = 0
-
-   #def handle_right_run(self):
-   #    self.x += 5
-   #    self.run_frames += 1
-   #    if self.x > 800:
-   #        self.state = self.LEFT_RUN
-   #        self.x = 800
-   #    if self.run_frames == 100:
-   #        self.state = self.RIGHT_STAND
-   #        self.stand_frames = 0
-
-   #def handle_right_stand(self):
-   #    self.stand_frames += 1
-   #    if self.stand_frames == 50:
-   #        self.state = self.RIGHT_RUN
-   #        self.run_frames = 0
-#
-   #handle_state = {
-   #    LEFT_RUN: handle_left_run,
-   #    RIGHT_RUN: handle_right_run,
-   #    LEFT_STAND: handle_left_stand,
-   #    RIGHT_STAND: handle_right_stand
-   #}
 
     def draw(self):
         self.image.clip_draw(self.frame * 100, self.state * 100, 100, 100, self.x, self.y)
@@ -111,18 +73,6 @@ class Object:
         self.LongPipe.draw(object_X,114)
         self.cloud.draw(700, 400)
         self.cloud.draw(400, 550)
-
-#class Trap:
-#    global trap_X
-#    def __init__(self):
-#        self.cloud_trap = load_image("cloud.png")
-#        self.trap_X = 200
-#    def draw(self):
-#        self.cloud.draw(trap_X,350)
-#    def update(self):
-#        if()
-
-
 
 def enter():
     global mario, grass, object, background
@@ -155,21 +105,11 @@ def handle_events():
                 mario.state = mario.RIGHT_RUN
             if event.key == SDLK_UP:
                 mario.state = mario.UP_JUMP
-            if event.key == SDLK_DOWN:
-                mario.state = mario.DOWN
-          # if event.key == SDLK_UP and event.key == SDLK_RIGHT:
-          #     mario.state = mario.RIGHT_JUMP
-          # if event.key == SDLK_UP and event.key == SDLK_LEFT:
-          #     mario.state = mario.LEFT_JUMP
         elif event.type == SDL_KEYUP:
             if event.key == SDLK_LEFT:
                 mario.state = mario.LEFT_STAND
             if event.key == SDLK_RIGHT:
                 mario.state = mario.RIGHT_STAND
-            if event.key == SDLK_UP:
-                mario.state = mario.RIGHT_JUMP
-            if event.key == SDLK_DOWN:
-                mario.state = mario.LEFT_JUMP
 
 def update():
     mario.update()
