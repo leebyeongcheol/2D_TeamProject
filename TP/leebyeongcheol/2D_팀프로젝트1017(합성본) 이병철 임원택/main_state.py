@@ -52,41 +52,24 @@ class Mario:
     def draw(self):
         self.image.clip_draw(self.frame * 100, self.state * 100, 100, 100, self.x, self.y)
 
+    def set_background(self, bg):
+        self.bg = bg
+
 class BackGround:
     def __init__(self):
         self.image = load_image("background.png")
     def draw(self):
         self.image.draw(400,300)
 
-class Grass:
-    def __init__(self):
-        self.image = load_image('grass.png')
-    def draw(self):
-        self.image.draw(400, 26)
-
-class Object:
-    def __init__(self):
-        self.LongPipe = load_image('object_LongPipe.png')
-        self.cloud = load_image('cloud.png')
-    def draw(self):
-        object_X = 600
-        self.LongPipe.draw(object_X,114)
-        self.cloud.draw(700, 400)
-        self.cloud.draw(400, 550)
-
 def enter():
     global mario, grass, object, background
     mario = Mario()
-    grass = Grass()
-    object = Object()
     background = BackGround()
 
 
 def exit():
     global mario, grass, object, background
     del(mario)
-    del(grass)
-    del(object)
     del(background)
 
 
@@ -117,8 +100,6 @@ def update():
 def draw():
     clear_canvas()
     background.draw()
-    grass.draw()
-    object.draw()
     mario.draw()
     update_canvas()
 
