@@ -29,6 +29,7 @@ class FreeBoy:
         self.xdir = 0
         self.ydir = 0
         self.state = self.RIGHT_STAND
+        self.jumpstate = 0
         if FreeBoy.image == None:
             FreeBoy.image = load_image('animation_sheet.png')
 
@@ -46,6 +47,14 @@ class FreeBoy:
         self.y += (self.ydir * distance)
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
+        if self.jumpstate == 1:
+            jumpindex = 1
+            #if self.y != 90:
+            self.y += jumpindex
+            if self.y  >= 110:
+                self.y -= jumpindex
+                if self.y >=90:
+                    self.jumpstate = 0
 
     def draw(self):
         sx = self.x - self.bg.window_left
@@ -67,9 +76,13 @@ class FreeBoy:
          elif event.key == SDLK_RIGHT:
            self.state = RIGHT_RUN
            self.xdir += 0.3
-         elif event.key == SDLK_UP: self.ydir += 0.3
-         elif event.key == SDLK_DOWN:
-           self.ydir -= 0.3
+         elif event.key == SDLK_UP:
+             self.jumpstate = 1
+             #if self.jumpstate == 1:
+             #    if self.ydir <= 10:
+             #       self.ydir += 1
+         #elif event.key == SDLK_DOWN:
+         #  self.ydir -= 0.3
         elif event.type == SDL_KEYUP:
          if event.key == SDLK_LEFT:
              self.state = LEFT_STAND
@@ -78,5 +91,5 @@ class FreeBoy:
              self.state = RIGHT_STAND
              self.xdir += -0.3
          elif event.key == SDLK_UP: self.ydir -= 0.3
-         elif event.key == SDLK_DOWN:
-           self.ydir -= 0.3
+         #elif event.key == SDLK_DOWN:
+         # self.ydir -= 0.3
