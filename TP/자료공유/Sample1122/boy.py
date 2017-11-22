@@ -56,31 +56,27 @@ class FreeBoy:
 
 
 
-    def draw_bb(self):
-        draw_rectangle(*self.get_bb())
 
-    def get_bb(self):
-        return self.x - 50, self.y - 50, self.x + 50, self.y + 50
 
     def handle_event(self, event):
         LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND = 0, 1, 2, 3
         if event.type == SDL_KEYDOWN:
          if event.key == SDLK_LEFT:
            self.state = LEFT_RUN
-           self.xdir += -0.5
+           self.xdir += -0.3
          elif event.key == SDLK_RIGHT:
            self.state = RIGHT_RUN
-           self.xdir += 0.5
-         elif event.key == SDLK_UP: self.ydir += 1
+           self.xdir += 0.3
+         elif event.key == SDLK_UP: self.ydir += 0.3
          elif event.key == SDLK_DOWN:
-           self.ydir -= 1
+           self.ydir -= 0.3
         elif event.type == SDL_KEYUP:
          if event.key == SDLK_LEFT:
              self.state = LEFT_STAND
-             self.xdir += 0.5
+             self.xdir += 0.3
          elif event.key == SDLK_RIGHT:
              self.state = RIGHT_STAND
-             self.xdir += -0.5
-         elif event.key == SDLK_UP: self.ydir -= 1
+             self.xdir += -0.3
+         elif event.key == SDLK_UP: self.ydir -= 0.3
          elif event.key == SDLK_DOWN:
-           self.ydir -= 1
+           self.ydir -= 0.3
