@@ -50,11 +50,13 @@ class FreeBoy:
         if self.jumpstate == 1:
             jumpindex = 1
             #if self.y != 90:
-            self.y += jumpindex
-            if self.y  >= 110:
+            if self.y >= 110:
                 self.y -= jumpindex
-                if self.y >=90:
+                if self.y >= 90:
                     self.jumpstate = 0
+            elif  self.y < 110:
+                self.y += jumpindex
+
 
     def draw(self):
         sx = self.x - self.bg.window_left
@@ -90,6 +92,6 @@ class FreeBoy:
          elif event.key == SDLK_RIGHT:
              self.state = RIGHT_STAND
              self.xdir += -0.3
-         elif event.key == SDLK_UP: self.ydir -= 0.3
+         #elif event.key == SDLK_UP: self.ydir -= 0.3
          #elif event.key == SDLK_DOWN:
          # self.ydir -= 0.3

@@ -21,19 +21,7 @@ class Background:
     def update(self, frame_time):
         self.left = (self.left + frame_time * self.speed) % self.image.w
 
-class Grass:
-    bgm = None
-    def __init__(self):
-        self.image= load_image('grass.png')
-
-    def draw(self):
-        self.image.draw(400,30)
-        if grass.bgm == None:
-            grass.bgm = load_music('football.mp3')
-            grass.bgm.set_volume(100)
-            grass.bgm.repeat_play()
-
-
+#
 class Boy:
     image = None
     eat_sound = None
@@ -47,9 +35,9 @@ class Boy:
         self.state = self.RIGHT_RUN
         if Boy.image == None:
             Boy.image = load_image('animation_sheet.png')
-        if Boy.eat_sound == None:
-            Boy.eat_sound = load_wav('pickup.wav')
-            Boy.eat_sound.set_volume(32)
+        #if Boy.eat_sound == None:
+        #    Boy.eat_sound = load_wav('pickup.wav')
+        #    Boy.eat_sound.set_volume(32)
 
     def eat(self):
         self.eat_sound.play()
@@ -57,13 +45,13 @@ class Boy:
     def draw(self):
         self.image.clip_draw(self.frame*100, self.state * 100, 100, 100, self.x, self.y)
 
-    def get_bb(self):
-        return self.x -50, self.y -50, self.x + 50, self.y +50
+    #def get_bb(self):
+    #    retu#rn self.x -50, self.y -50, self.x + 50, self.y +50
 
     def handle_left_run(self):
         self.x -= 5
         self.run_frames += 1
-        if self.x < 0:
+        if self.x < 0:#
             self.state = self.RIGHT_RUN
             self.x = 0
         if self.run_frames == 280:
@@ -103,16 +91,16 @@ class Boy:
         self.frame = (self.frame + 1) % 8
         self.handle_state[self.state](self)
 
-    def mouse_update(self):
-        self.frame = (self.frame + 1) % 8
-        if team[boyNum].state == self.RIGHT_RUN:
-            team[boyNum].x = min(800, self.x + 5)
-        elif team[boyNum].state == self.LEFT_RUN:
-            team[boyNum].x = max(0, self.x - 5)
-        elif team[boyNum].state == self.RIGHT_STAND:
-            team[boyNum].stand_frames += 1
-        elif team[boyNum].state == self.LEFT_STAND:
-            team[boyNum].stand_frames += 1
+   #def mouse_update(self):
+   #    self.frame = (self.frame + 1) % 8
+   #    if team[boyNum].state == self.RIGHT_RUN:
+   #        team[boyNum].x = min(800, self.x + 5)
+   #    elif team[boyNum].state == self.LEFT_RUN:
+   #        team[boyNum].x = max(0, self.x - 5)
+   #    elif team[boyNum].state == self.RIGHT_STAND:
+   #        team[boyNum].stand_frames += 1
+   #    elif team[boyNum].state == self.LEFT_STAND:
+   #        team[boyNum].stand_frames += 1
 
 
 
@@ -129,21 +117,16 @@ def collide(a, b):
 
 
 def enter():
-    global boy, grass, team, boyNum, mouseX, mouseY
+    global boy, mouseX, mouseY
     boy = Boy()
-    grass = Grass()
-    team = [Boy() for i in range(11)]
-    boyNum = 0
     mouseX = 0
     mouseY = 0
 
 
 
 def exit():
-    global boy, grass, team, boyNum,  mouseX, mouseY
+    global boy,   mouseX, mouseY
     del(boy)
-    del(grass)
-    del(team), (boyNum)
     del(mouseX), (mouseY)
 
 
