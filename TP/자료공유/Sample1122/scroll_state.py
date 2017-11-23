@@ -29,7 +29,7 @@ def destroy_world():
 
 
 def enter():
-    open_canvas(800, 600)
+    #open_canvas(800, 600)
     hide_cursor()
     game_framework.reset_time()
     create_world()

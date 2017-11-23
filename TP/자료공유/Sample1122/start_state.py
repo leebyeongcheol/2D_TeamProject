@@ -14,7 +14,7 @@ def enter():
 def exit():
     global image
     del(image)
-    close_canvas()
+    #close_canvas()
 
 def update(frame_time):
     global logo_time

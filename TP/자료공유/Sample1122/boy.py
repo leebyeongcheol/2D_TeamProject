@@ -20,7 +20,8 @@ class FreeBoy:
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND = 0, 1, 2, 3
 
     def __init__(self):
-        self.x, self.y = 30, 90
+        #self.x, self.y = 30, 90
+        self.x, self.y = 30, 80
         self.canvas_width = get_canvas_width()
         self.canvas_height = get_canvas_height()
         self.frame = random.randint(0, 7)
@@ -30,8 +31,9 @@ class FreeBoy:
         self.ydir = 0
         self.state = self.RIGHT_STAND
         self.jumpstate = 0
+        self.isJump = False
         if FreeBoy.image == None:
-            FreeBoy.image = load_image('animation_sheet.png')
+            FreeBoy.image = load_image('animation_sheet2.png')
 
 
     def set_background(self, bg):
@@ -48,20 +50,33 @@ class FreeBoy:
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
         if self.jumpstate == 1:
-            jumpindex = 1
+            jumpindex = 2
             #if self.y != 90:
-            if self.y >= 110:
-                self.y -= jumpindex
-                if self.y >= 90:
+            if self.isJump == True:
+                self.y += 2*frame_time * 100
+                if self.y > 140:
+                    self.isJump = False
+
+            else:
+                self.y -= 2*frame_time * 100
+                if self.y < 80:
+                    self.y = 80
+                    self.isJump = True
                     self.jumpstate = 0
-            elif  self.y < 110:
-                self.y += jumpindex
+            #if self.y >= 110:
+            #    self.y -= jumpindex*frame_time*100
+            #    if self.y >= 90:
+            #        self.jumpstate = 0
+            #elif  self.y < 110:#위
+            #    self.y += jumpindex*frame_time*100
+            #    if self.y
 
 
     def draw(self):
         sx = self.x - self.bg.window_left
         sy = self.y - self.bg.window_bottom
-        self.image.clip_draw(self.frame * 100, self.state * 100, 100, 100, sx, sy)
+        #self.image.clip_draw(self.frame * 100, self.state * 100, 100, 100, sx, sy)
+        self.image.clip_draw(self.frame * 50, self.state * 50, 50, 50, sx, sy)
         debug_print('x=%d, y=%d, sx=%d, sy=%d' % (self.x, self.y, sx, sy))
 
 
@@ -80,6 +95,7 @@ class FreeBoy:
            self.xdir += 0.3
          elif event.key == SDLK_UP:
              self.jumpstate = 1
+             self.isJump = True
              #if self.jumpstate == 1:
              #    if self.ydir <= 10:
              #       self.ydir += 1
