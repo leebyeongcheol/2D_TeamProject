@@ -12,7 +12,7 @@ class FreeBoy:
     print(RUN_SPEED_PPS)
     TIME_PER_ACTION = 0.5
     ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
-    FRAMES_PER_ACTION = 8
+    FRAMES_PER_ACTION = 4
 
     image = None
 
@@ -42,7 +42,7 @@ class FreeBoy:
         self.life_time += frame_time
         distance = FreeBoy.RUN_SPEED_PPS * frame_time
         self.total_frames += FreeBoy.FRAMES_PER_ACTION * FreeBoy.ACTION_PER_TIME * frame_time
-        self.frame = int(self.total_frames) % 8
+        self.frame = int(self.total_frames) % 4
         self.x += (self.xdir * distance)
         self.y += (self.ydir * distance)
         self.x = clamp(0, self.x, self.bg.w)
