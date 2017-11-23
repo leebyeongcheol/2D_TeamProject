@@ -148,17 +148,17 @@ def handle_events():
 
 
 
-def update():
+def update(frame_time):
     handle_events()
     boy.update()
 
 
 def draw():
     clear_canvas()
-    grass.draw()
+    #grass.draw()
     boy.draw()
 
-    numbers.draw(boyNum + 1, 740, 540)
+    #numbers.draw(boyNum + 1, 740, 540)
 
     update_canvas()
 

@@ -90,9 +90,9 @@ def run(start_state):
     while (running):
         frame_time = time.time() - current_time
         current_time += frame_time
-        stack[-1].handle_events(frame_time)
+        stack[-1].handle_events()
         stack[-1].update(frame_time)
-        stack[-1].draw(frame_time)
+        stack[-1].draw()
     # repeatedly delete the top of the stack
     while (len(stack) > 0):
         stack[-1].exit()

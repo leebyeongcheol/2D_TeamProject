@@ -1,10 +1,10 @@
 from pico2d import *
-import main_state
+import scroll_state
 import game_framework
 name = "TitleState"
 image = None
 
-def update():
+def update(frame_time):
     pass
 
 def enter():
@@ -24,7 +24,7 @@ def handle_events():
             if(event.type, event.key) == (SDL_KEYDOWN, SDLK_ESCAPE):
                 game_framework.quit()
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
-                game_framework.change_state(main_state)
+                game_framework.change_state(scroll_state)
 def draw():
     clear_canvas()
     image.draw(400,300)

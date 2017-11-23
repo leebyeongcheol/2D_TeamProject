@@ -47,7 +47,7 @@ def resume():
     pass
 
 
-def handle_events(frame_time):
+def handle_events():
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -67,7 +67,7 @@ def update(frame_time):
 
 
 
-def draw(frame_time):
+def draw():
     clear_canvas()
     background.draw()
     boy.draw()
