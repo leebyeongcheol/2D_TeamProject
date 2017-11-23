@@ -63,8 +63,6 @@ class FreeBoy:
         #falling
         if(self.x >830 and self.x< 1050):
             self.y -= 4*frame_time*100
-        if (self.x > 830 and self.x < 1050):
-            self.y += 4 * frame_time * 100
         self.y += (self.ydir * distance)
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
