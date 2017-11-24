@@ -24,7 +24,7 @@ class FixedBackground:
             self.window_left, 0,
             self.canvas_width, self.canvas_height,
             0,0)
-        debug_print('window_left=%d, window_bottom=%d' % (self.window_left, self.window_bottom))
+        #debug_print('window_left=%d, window_bottom=%d' % (self.window_left, self.window_bottom))
 
 
     def update(self, frame_time):
