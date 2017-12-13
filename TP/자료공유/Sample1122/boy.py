@@ -80,6 +80,13 @@ class FreeBoy:
                    self.isJump = True
                    self.jumpstate = 0
 
+
+    def get_bb(self):
+        return self.x - 14, self.y - 22, self.x + 10, self.y + 22
+
+    def draw_bb(self):
+        draw_rectangle(*self.get_bb())
+
     def draw(self):
         sx = self.x - self.bg.window_left
         sy = self.y - self.bg.window_bottom

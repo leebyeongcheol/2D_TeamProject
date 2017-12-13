@@ -39,5 +39,7 @@ class FixedBackground:
     def handle_event(self, event):
         pass
 
-
+    def get_bb(self):
+        def get_bb(self):
+            return self.x - 5, self.y - 5, self.x + 5, self.y + 5
 
