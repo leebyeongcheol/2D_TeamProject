@@ -1,7 +1,7 @@
 from pico2d import *
 
 import game_framework
-from Object import FreeObject as Object
+from Object import FPipe as FPipe
 from boy import FreeBoy as Boy
 from background import FixedBackground as Background
 
@@ -11,21 +11,25 @@ name = "scroll_state"
 
 boy = None
 background = None
+fPipe = None
 
 def create_world():
-    global boy, background
+    global boy, background, fPipe
     boy = Boy()
     background = Background()
+    fPipe = FPipe()
 
     # fill here
     background.set_center_object(boy)
     boy.set_background(background)
+    fPipe.set_background(background)
 
 
 def destroy_world():
-    global boy, background
+    global boy, background, fPipe
     del(boy)
     del(background)
+    del(fPipe)
 
 
 def enter():
@@ -57,12 +61,14 @@ def handle_events():
                 game_framework.quit()
             else:
                 boy.handle_event(event)
+              #  object.handle_event(event)
                 background.handle_event(event)
 
 
 
 def update(frame_time):
     boy.update(frame_time)
+    fPipe.update(frame_time)
     background.update(frame_time)
 
 def collide(a, b):
@@ -82,6 +88,7 @@ def draw():
     background.draw()
     boy.draw()
     boy.draw_bb()
+    fPipe.draw_bb()
     update_canvas()
 
 

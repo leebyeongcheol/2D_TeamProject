@@ -14,7 +14,7 @@ class FreeBoy:
     TIME_PER_ACTION = 0.5
     ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
     FRAMES_PER_ACTION = 8
-
+    jumpcount = 0
     image = None
 
     LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND = 0, 1, 2, 3
@@ -54,14 +54,15 @@ class FreeBoy:
             #if self.y != 90:
             if self.isJump == True:
                 self.y += 2*frame_time * 100
-                if self.y > 105:
+                FreeBoy.jumpcount += 1
+                if FreeBoy.jumpcount > 60:
                     self.isJump = False
             else:
-               self.y -= 2*frame_time * 100
-               if self.y < 55:
-                   self.y = 55
-                   self.isJump = True
-                   self.jumpstate = 0
+                self.y -= 2*frame_time * 100
+                FreeBoy.jumpcount -= 1
+                if FreeBoy.jumpcount == 0:
+                    self.isJump = True
+                    self.jumpstate = 0
 
 
     def get_bb(self):
@@ -80,7 +81,8 @@ class FreeBoy:
         self.image.clip_draw(self.frame * 50, self.state * 50, 50, 50, sx, sy)
         debug_print('x=%d, y=%d, sx=%d, sy=%d' % (self.x, self.y, sx, sy))
 
-
+    def stop(self, stopY):
+        self.y = stopY + 1
 
     def handle_event(self, event):
         LEFT_RUN, RIGHT_RUN, LEFT_STAND, RIGHT_STAND = 0, 1, 2, 3
