@@ -45,24 +45,27 @@ class FreeBoy:
         distance = FreeBoy.RUN_SPEED_PPS * frame_time
         self.total_frames += FreeBoy.FRAMES_PER_ACTION * FreeBoy.ACTION_PER_TIME * frame_time
         self.frame = int(self.total_frames) % 4
-        # 1 pipe
-        if ((self.x > 330 and self.x < 380) and (self.y < 65)):
-            self.x -= (self.xdir * distance)
-        # 2 pipe
-        if ((self.x > 445 and self.x < 495) and (self.y < 65)):
-            self.x -= (self.xdir * distance)
-        #3 pipe
-        if ((self.x > 540 and self.x < 590) and (self.y < 75)):
-           self.x -= (self.xdir * distance)
-        #4 pipe
-        if ((self.x > 660 and self.x < 710) and (self.y < 75)):
-           self.x -= (self.xdir * distance)
-        else:
-            self.x += (self.xdir * distance)
 
-        #falling
-        if(self.x >830 and self.x< 1050):
-            self.y -= 4*frame_time*100
+        # 1 pipe
+        #if ((self.x > 330 and self.x < 380) and (self.y < 65)):
+        #    self.x -= (self.xdir * distance)
+        ## 2 pipe
+        #if ((self.x > 445 and self.x < 495) and (self.y < 65)):
+        #    self.x -= (self.xdir * distance)
+        ##3 pipe
+        #if ((self.x > 540 and self.x < 590) and (self.y < 75)):
+        #   self.x -= (self.xdir * distance)
+        ##4 pipe
+        #if ((self.x > 660 and self.x < 710) and (self.y < 75)):
+        #   self.x -= (self.xdir * distance)
+        #else:
+            #
+        self.x += (self.xdir * distance)
+
+        #falling#
+        #if(self.x >830 and self.x< 1050):
+        #    self.y -= 4*frame_time*100
+
         self.y += (self.ydir * distance)
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
