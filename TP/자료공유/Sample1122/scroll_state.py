@@ -1,9 +1,11 @@
 from pico2d import *
-
 import game_framework
-from Object import FPipe as FPipe
 from boy import FreeBoy as Boy
 from background import FixedBackground as Background
+from Object import OnePipe as OnePipe
+from Object import TwoPipe as TwoPipe
+from Object import ThreePipe as ThreePipe
+from Object import Onegrass as Onegrass
 
 
 
@@ -11,26 +13,36 @@ name = "scroll_state"
 
 boy = None
 background = None
-fPipe = None
+onePipe = None
+twoPipe = None
+threePipe = None
+oneGrass = None
 
 def create_world():
-    global boy, background, fPipe
+    global boy, background, onePipe,twoPipe,threePipe,oneGrass
     boy = Boy()
     background = Background()
-    fPipe = FPipe()
-
+    onePipe = OnePipe()
+    twoPipe = TwoPipe()
+    threePipe = ThreePipe()
+    oneGrass = Onegrass()
     # fill here
     background.set_center_object(boy)
     boy.set_background(background)
-    fPipe.set_background(background)
+    onePipe.set_background(background)
+    twoPipe.set_background(background)
+    threePipe.set_background(background)
+    oneGrass.set_background(background)
 
 
 def destroy_world():
-    global boy, background, fPipe
+    global boy, background, onePipe , twoPipe
     del(boy)
     del(background)
-    del(fPipe)
-
+    del(onePipe)
+    del(twoPipe)
+    del(threePipe)
+    del(oneGrass)
 
 def enter():
     #open_canvas(800, 600)
@@ -68,8 +80,9 @@ def handle_events():
 
 def update(frame_time):
     boy.update(frame_time)
-    fPipe.update(frame_time)
+    onePipe.update(frame_time)
     background.update(frame_time)
+
 
 def collide(a, b):
     left_a, bottom_a, right_a, top_a = a.get_bb()
@@ -88,7 +101,10 @@ def draw():
     background.draw()
     boy.draw()
     boy.draw_bb()
-    fPipe.draw_bb()
+    onePipe.draw_bb()
+    twoPipe.draw_bb()
+    threePipe.draw_bb()
+    oneGrass.draw_bb()
     update_canvas()
 
 
