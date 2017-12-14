@@ -38,8 +38,8 @@
       <file leaf-file-name="boy.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/boy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="62" column="39" lean-forward="false" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+            <state relative-caret-position="1267">
+              <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Object.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Object.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Object.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-69">
-              <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="276">
+              <caret line="91" column="1" lean-forward="true" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#150#162#0" expanded="false" />
@@ -67,8 +67,8 @@
       <file leaf-file-name="scroll_state.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scroll_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+            <state relative-caret-position="-345">
+              <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -102,13 +102,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mygame.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mygame.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mygame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="92">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#1#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,13 +130,13 @@
         <option value="$PROJECT_DIR$/uif.py" />
         <option value="$PROJECT_DIR$/game_framework.py" />
         <option value="$PROJECT_DIR$/title_state.py" />
-        <option value="$PROJECT_DIR$/mygame.py" />
         <option value="$PROJECT_DIR$/start_state.py" />
         <option value="$PROJECT_DIR$/background.py" />
         <option value="$PROJECT_DIR$/main_state.py" />
         <option value="$PROJECT_DIR$/boy.py" />
-        <option value="$PROJECT_DIR$/scroll_state.py" />
         <option value="$PROJECT_DIR$/Object.py" />
+        <option value="$PROJECT_DIR$/scroll_state.py" />
+        <option value="$PROJECT_DIR$/mygame.py" />
       </list>
     </option>
   </component>
@@ -334,7 +334,7 @@
         <state relative-caret-position="19">
           <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -405,7 +405,7 @@
         <state relative-caret-position="23">
           <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -610,16 +610,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mygame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/background.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -630,30 +620,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/boy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="62" column="39" lean-forward="false" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scroll_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        <state relative-caret-position="-345">
+          <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/boy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1267">
+          <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Object.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="276">
+          <caret line="91" column="1" lean-forward="true" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#150#162#0" expanded="false" />
@@ -661,6 +651,16 @@
             <element signature="e#1353#1986#0" expanded="false" />
             <element signature="e#1449#1461#0" expanded="false" />
             <element signature="e#2105#2117#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mygame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

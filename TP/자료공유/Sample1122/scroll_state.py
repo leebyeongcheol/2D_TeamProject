@@ -36,7 +36,7 @@ def create_world():
 
 
 def destroy_world():
-    global boy, background, onePipe , twoPipe
+    global boy, background, onePipe , twoPipe,threePipe,oneGrass
     del(boy)
     del(background)
     del(onePipe)
