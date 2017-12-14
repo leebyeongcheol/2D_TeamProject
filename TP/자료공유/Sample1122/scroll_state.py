@@ -1,10 +1,10 @@
 from pico2d import *
 
 import game_framework
-
-
-from boy import FreeBoy as Boy # import Boy class from boy.py
+from Object import FreeObject as Object
+from boy import FreeBoy as Boy
 from background import FixedBackground as Background
+
 
 
 name = "scroll_state"
